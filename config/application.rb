@@ -33,7 +33,8 @@ module Rabel
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    config.time_zone = 'Beijing'
+    # config.time_zone = 'Beijing'
+    config.time_zone = 'Tokyo'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
@@ -56,6 +57,9 @@ module Rabel
 
     # enable whitelist mass assignment protection by default
     config.active_record.whitelist_attributes = true
+
+    # prevent initializing your application and connecting to the database
+    config.assets.initialize_on_precompile = false
 
     config.before_configuration do
       APP_CONFIG = YAML.load_file(Rails.root.join('config', 'settings.yml'))[Rails.env]

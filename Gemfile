@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
@@ -6,7 +6,7 @@ gem 'rails', '3.2.9'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # gem 'pg'
-gem 'mysql2'
+# gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -24,16 +24,18 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the web server
-gem 'unicorn'
-
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :production do
+  gem 'thin'
+end
+
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.12.0'
   gem 'debugger'
 end
@@ -57,6 +59,7 @@ gem 'settingslogic'
 gem 'cancan'
 gem 'kaminari'
 gem 'carrierwave', "~> 0.6.2"
+gem "fog", "~> 1.3.1"
 gem 'carrierwave-upyun', '~> 0.1.6'
 gem 'rmagick'
 gem 'mime-types'
