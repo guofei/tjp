@@ -16,6 +16,7 @@
 /tmp/sessions/
 /tmp/pids/*.pid
 /tmp/sockets/*.sock
+/tmp/uploads/
 
 .DS_Store
 .cache_rake_t
